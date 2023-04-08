@@ -10,9 +10,6 @@
 	let minDaysOfInterval = 14.0;
 	let maxDaysOfInterval = 21.0;
 
-	async function exportDB() {
-		alert('TODO: implement');
-	}
 	async function importDB() {
 		alert('TODO: implement');
 	}
@@ -47,6 +44,7 @@
 		const link = document.createElement('a');
 		link.download = name;
 		link.href = dataUri;
+		link.download = `chore-export-${Date.now()}.json`;
 		document.body.appendChild(link);
 		link.click();
 		document.body.removeChild(link);
@@ -54,8 +52,8 @@
 </script>
 
 <div style="border: 2px solid black;" class="p-2 m-1">
-	<button class="btn btn-secondary" on:click={exportDB}>Export Database</button>
-	<button class="btn btn-secondary" on:click={importDB}>Import Database</button>
+	<button class="btn btn-secondary" on:click={exportAllAndDownload}>Exportieren</button>
+	<button class="btn btn-secondary" on:click={importDB}>Importieren</button>
 
 	<p>{status}</p>
 	<fieldset>
@@ -85,7 +83,7 @@
 			<input class="form-control" type="number" min="1" step="1" bind:value={maxDaysOfInterval} />
 		</label>
 		<br />
-		<button class="btn btn-success mt-2 mb-2" disabled={!!name} on:click={addNewChore}
+		<button class="btn btn-primary mt-2 mb-2" disabled={!!name} on:click={addNewChore}
 			>Chore hinzufügen</button
 		>
 	</fieldset>

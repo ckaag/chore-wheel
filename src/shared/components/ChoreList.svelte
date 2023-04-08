@@ -45,7 +45,7 @@
 	}
 </script>
 
-<label class="btn btn-primary mb-3 mt-3">
+<label class="btn btn-info mb-3 mt-3">
 	<input
 		type="checkbox"
 		class="btn-check"
