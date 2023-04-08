@@ -40,7 +40,7 @@
 	async function exportAllAndDownload() {
 		const arr = await db.chores.toArray();
 		const json = JSON.stringify(arr);
-		const dataUri = 'text/json;charset=utf-8,' + encodeURIComponent(json);
+		const dataUri = 'data:text/json;charset=utf-8,' + encodeURIComponent(json);
 		const link = document.createElement('a');
 		link.download = name;
 		link.href = dataUri;
