@@ -1,2 +1,11 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import ChoreAdder from '../shared/components/ChoreAdder.svelte';
+	import ChoreList from '../shared/components/ChoreList.svelte';
+</script>
+
+<h1>Chore Wheel</h1>
+
+<ChoreAdder />
+
+<h2>Chores</h2>
+<ChoreList />
