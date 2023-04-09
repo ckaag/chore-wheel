@@ -16,6 +16,7 @@
 			const now = new Date();
 			await db.chores.update(chore.id, {
 				nextExecutionLast: addDays(now, chore.maxDaysOfInterval),
+				nextExecutionEarliest: addDays(now, chore.minDaysOfInterval),
 				executionsInDescendingOrder: [now, ...chore.executionsInDescendingOrder]
 			});
 			updateFilter();
