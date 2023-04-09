@@ -9,4 +9,5 @@ export interface Chore {
 	maxDaysOfInterval: number;
 	executionsInDescendingOrder: Date[];
 	nextExecutionLast: Date;
+	nextExecutionEarliest: Date;
 }
